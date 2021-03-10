@@ -7,10 +7,14 @@ interface tiffenType {
 }
 
 interface Tiffin {
-  name: string;
-  id: string;
-  price: number;
-  type: tiffenType;
+  tiffinservice: string;
+  pickup: {
+    price: string;
+  };
+  _id: string;
+  meal_for: { lunch: boolean; Dinner: boolean; Both: boolean };
+  isInCart: boolean;
+  image: string;
 }
 
 export default Tiffin;
