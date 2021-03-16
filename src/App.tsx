@@ -1,23 +1,26 @@
 import "./App.css";
 import routes from "./routes";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import useServerData from "./hooks/useServerData";
+
+// import useServerData from "./hooks/useServerData.jsx";
 import { Button } from "@material-ui/core";
+import Navbar from "./components/Navbar/Navbar.jsx";
 
 function App() {
-  const data = useServerData(10000);
-  console.log(data);
+  // const data = useServerData(10000);
+  // console.log(data);
   return (
-    <BrowserRouter>
-      <Route path="/" component={Navbar} />
-      <Switch>
-        {routes.map((data) => {
-          return <Route key={data.path} {...data} />;
-        })}
-        <Redirect from="/" to="/home" />
-      </Switch>
-    </BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
+        <Route path="/" component={Navbar} />
+        <Switch>
+          {routes.map((data) => {
+            return <Route key={data.path} {...data} />;
+          })}
+          <Redirect from="/" to="/home" />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

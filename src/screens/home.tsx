@@ -16,33 +16,7 @@ const Home = (props: HomeProps) => {
     };
   });
   console.log(tiffins);
-  return (
-    <div>
-      <Container maxWidth="md">
-        <Grid container spacing={2}>
-          {tiffins.map((data) => {
-            return (
-              <Grid item xs={12} md={6} container>
-                <Grid item xs={12}>
-                  <Avatar src={data.image} alt="ma" />
-                  <Button
-                    onClick={() =>
-                      dispatch({
-                        type: addToCart,
-                        payload: { id: data._id },
-                      })
-                    }
-                  >
-                    att to cart
-                  </Button>
-                </Grid>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    </div>
-  );
+  return <div>this home</div>;
 };
 
 export default Home;
